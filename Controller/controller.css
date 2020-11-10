@@ -6,13 +6,8 @@
     /*    margin-left: -375px;
         margin-top: -285px;*/
 }
-
-.xbox.white {
-    background: url(xbox-assets/base-white.svgz);
-}
-
 .xbox.disconnected {
-    background: url(xbox-assets/disconnected.svgz);
+    background: url(disconnected.svgz);
 }
 
 .xbox.disconnected div {
@@ -29,7 +24,7 @@
 .xbox .trigger {
     width: 88px;
     height: 121px;
-    background: url(xbox-assets/trigger.svgz);
+    background: url(trigger.svgz);
     opacity: 0;
 }
 
@@ -46,7 +41,7 @@
 .xbox .bumper {
     width: 170px;
     height: 61px;
-    background: url(xbox-assets/bumper.svgz);
+    background: url(bumper.svgz);
     opacity: 0;
 }
 
@@ -74,7 +69,7 @@
 
 .xbox .quadrant {
     position: absolute;
-    background: url(xbox-assets/quadrant.svgz);
+    background: url(quadrant.svgz);
     height: 45px;
     width: 45px;
     top: 258px;
@@ -111,7 +106,7 @@
 }
 
 .xbox .back, .xbox .start {
-    background: url(xbox-assets/start-select.svgz);
+    background: url(start-select.svgz);
     width: 33px;
     height: 33px;
     opacity: 0;
@@ -185,7 +180,7 @@
 
 .xbox .stick {
     position: absolute;
-    background: url(xbox-assets/stick.svgz);
+    background: url(stick.svgz);
     background-position: -85px 0;
     height: 83px;
     width: 83px;
@@ -214,7 +209,7 @@
 }
 
 .xbox .face {
-    background: url(xbox-assets/dpad.svgz);
+    background: url(dpad.svgz);
     position: absolute;
     opacity: 0;
 }
