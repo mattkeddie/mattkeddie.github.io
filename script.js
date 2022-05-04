@@ -15,8 +15,10 @@ function myFunction() {
   if (x.className === "topnav") {
     x.className += " responsive";
     document.getElementById("myname").style.display = "none";
+    document.getElementById("intro").style.marginTop = "0px";
   } else {
     x.className = "topnav";
     document.getElementById("myname").style.display = "block";
+    document.getElementById("intro").style.marginTop = "50px";
   }
 }
