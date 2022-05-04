@@ -376,10 +376,13 @@ h4 {
     }
 
     #intro-text h1 {
-        font-size: 32pt;
         padding-bottom: 0px;
         margin-bottom: 0;
         margin-top: 0;
+    }
+
+    #intro h1 {
+        font-size: 32pt;
     }
 
     .project-description p{
