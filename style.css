@@ -296,6 +296,21 @@ body {
     color: orange;
 }
 
+#cv-link {
+    text-decoration: none;
+    color: orange;
+}
+
+#interests-link {
+    text-decoration: none;
+    color: orange;
+}
+
+#youtube-link {
+    text-decoration: none;
+    color: orange;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
