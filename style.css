@@ -233,10 +233,12 @@ body {
 
     #rl-scoreboard-technologies-used {
         text-align: center;
+        width: 100%;
     }
 
     #rl-scoreboard-date {
         text-align: center;
+        width: 100%;
     }
 
     .project {
@@ -287,5 +289,9 @@ body {
     #face {
         max-width: 500px;
         max-height: 500px;
+        margin: auto;
+    }
+    h1, h2, h3, h4 {
+        text-align: center;
     }
   }
