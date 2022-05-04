@@ -235,6 +235,10 @@ body {
     color: black;
   }
   
+  #myname:hover {
+      color:black;
+  }
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
