@@ -383,6 +383,11 @@ body {
     #rl-scoreboard-post-game {
         padding-bottom: 0;
     }
+
+    .subheading {
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 800px) {
