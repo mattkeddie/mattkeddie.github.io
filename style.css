@@ -270,6 +270,42 @@ body {
         padding-left: 5%;
         padding-right: 5%;
     }
+
+    .content p {
+        font-size: 18pt;
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+
+    .content h2 {
+        font-size: 24pt;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .content h1 {
+        font-size: 28pt;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .project-description p{
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 14pt;
+    }
+
+    .project-description a{
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 14pt;
+    }
+
+    #rl-scoreboard-ss {
+        padding-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
