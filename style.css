@@ -58,6 +58,7 @@ body {
 
 #face {
     width: 100%;
+
 }
 
 #intro h1 {
@@ -148,6 +149,10 @@ body {
 
 .description {
     margin-bottom: 0;
+}
+
+#about-text {
+    font-size: 28pt;
 }
 
 .topnav {
@@ -291,7 +296,20 @@ body {
         max-height: 500px;
         margin: auto;
     }
+
+    #intro-face {
+        max-width: 500px;
+        max-height: 500px;
+        margin: auto;
+    }
+
     h1, h2, h3, h4 {
         text-align: center;
     }
   }
+
+@media screen and (min-width: 1500px) {
+    #face {
+        width: 500px;
+    }
+}
