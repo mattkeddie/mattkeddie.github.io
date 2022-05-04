@@ -291,6 +291,11 @@ body {
     display: block;
   }
 
+#liquipedia-link {
+    text-decoration: none;
+    color: orange;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
