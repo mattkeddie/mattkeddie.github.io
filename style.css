@@ -53,6 +53,7 @@ body {
 #intro {
     padding-top: 100px;
     display: flex;
+    flex-wrap: wrap;
     font-size: 36pt;
 }
 
@@ -75,6 +76,7 @@ body {
 
 .project {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .project-name h2{
@@ -127,6 +129,7 @@ body {
 
 #rl-scoreboard-details {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .subheading {
