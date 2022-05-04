@@ -264,6 +264,7 @@ body {
 
     #intro {
         flex-direction: column;
+        margin-top: 50px;
     }
 
     .content {
@@ -285,7 +286,7 @@ body {
     }
 
     .content h1 {
-        font-size: 28pt;
+        font-size: 24pt;
         padding-bottom: 0px;
         margin-bottom: 0;
         margin-top: 0;
