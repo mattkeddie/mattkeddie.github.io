@@ -3,6 +3,16 @@ body {
     font-size: 18pt;
 }
 
+.right-buttons {
+    float: right;
+    
+}
+
+#myname {
+    clear: both;
+    float: left;
+}
+
 #navbar {
     background-color: rgb(255, 255, 255); /* Black background color */
     position: fixed; /* Make it stick/fixed */
@@ -138,7 +148,6 @@ body {
 
 #rl-scoreboard-date {
     width: 30%;
-    flex: auto;
     text-align: right;
 }
 
@@ -165,7 +174,6 @@ body {
   }
   
   .topnav a {
-    float: left;
     display: block;
     color: #000000;
     text-align: center;
@@ -303,7 +311,7 @@ body {
         margin: auto;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
         text-align: center;
     }
   }
