@@ -110,43 +110,43 @@ body {
 
 #rl-scoreboard-no-active {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-blue-active {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-orange-active {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-unassisted-goal {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-assisted-goal {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-overtime {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
 #rl-scoreboard-post-game {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
 }
 
@@ -312,6 +312,27 @@ body {
     color: orange;
 }
 
+
+h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#rl-scoreboard-details p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#rl-scoreboard-details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#rl-scoreboard-showcase p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
@@ -474,6 +495,7 @@ body {
     .subheading {
         margin-bottom: 0;
         padding-bottom: 0;
+        text-align: center;
     }
     h2, h3 {
         margin-bottom: 0;
