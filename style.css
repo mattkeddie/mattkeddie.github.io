@@ -73,7 +73,7 @@ body {
 
 #intro h1 {
     color: orange;
-    font-size: 48pt;
+    font-size: 32pt;
 }
 
 .divider {
@@ -508,16 +508,39 @@ h4 {
     #academic-text {
         margin-bottom: 20px;
     }
+
+    #intro p {
+        text-align: center;
+    }
+
+    #intro h1 {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #intro h1 {
+        font-size: 42pt;
+    }
+
+    #intro p {
+        margin-top: 10px;
+    }
 }
 
 @media screen and (min-width: 1500px) {
     #face {
         width: 500px;
     }
-    h1, h2, h3 {
+    h2, h3 {
         text-align: center;
     }
     p .subheading {
         text-align: center;
+    }
+    #intro h1 {
+        text-align: left;;
+        font-size: 48pt;
+        margin-bottom: 37.520;
     }
 }
