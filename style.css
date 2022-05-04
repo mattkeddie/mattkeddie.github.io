@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+}
+
+#navbar {
+    background-color: rgb(255, 255, 255); /* Black background color */
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    display: flex;
+}
+  
+/* Style the navbar links */
+#navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+  
+#navbar a:hover {
+    color: grey;
+}
+
+.flex-child {
+    flex: 1;
+    margin: 10px;
+}
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+
+#name {
+    padding: 15px;
+    padding-left: 40px;
+}
+
+#links {
+    padding-right: 50px;
+}
+
+.content {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20px;
+}
+
+#intro {
+    padding-top: 100px;
+    display: flex;
+    font-size: 36pt;
+}
+
+#face {
+    width: 100%;
+}
+
+#intro h1 {
+    color: orange;
+    font-size: 48pt;
+}
+
+.divider {
+    background: rgb(186, 186, 186);
+    width: 80%;
+    height: 2px;
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+.project {
+    display: flex;
+}
+
+.project-name h2{
+    font-size: 36pt;
+}
+
+.project-name p{
+    font-size: 18pt;
+    color: grey;
+}
+
+.project-description p{
+    font-size: 24pt;
+}
+
+#rl-scoreboard-ss {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.contact-nav {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the navbar links */
+.contact-nav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+  
+.contact-nav a:hover {
+    color: grey;
+}
+
+.content a {
+    text-decoration: none;
+    color: black;
+}
+
+#rl-scoreboard-description {
+    padding-top: 50px;
+}
+
+#rl-scoreboard-details {
+    display: flex;
+}
+
+.subheading {
+    color: grey;
+}
+
+#rl-scoreboard-date {
+    width: 30%;
+    flex: auto;
+    text-align: right;
+}
+
+#rl-scoreboard-technologies-used {
+    width: 70%;
+    flex: auto;
+}
+
+.description {
+    margin-bottom: 0;
+}
