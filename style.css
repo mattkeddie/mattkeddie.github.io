@@ -107,6 +107,48 @@ body {
     padding-bottom: 50px;
 }
 
+#rl-scoreboard-no-active {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-blue-active {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-orange-active {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-unassisted-goal {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-assisted-goal {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-overtime {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+#rl-scoreboard-post-game {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
 .contact-nav {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
@@ -158,6 +200,12 @@ body {
 
 .description {
     margin-bottom: 0;
+}
+
+.disclaimer {
+    margin-bottom: 0;
+    color: orange;
+    font-style:italic;
 }
 
 #about-text {
@@ -305,6 +353,34 @@ body {
     }
 
     #rl-scoreboard-ss {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-no-active {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-blue-active {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-orange-active {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-unassisted-goal {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-assisted-goal {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-overtime {
+        padding-bottom: 0;
+    }
+
+    #rl-scoreboard-post-game {
         padding-bottom: 0;
     }
 }
