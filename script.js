@@ -9,3 +9,7 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+function myFunction(x) {
+  x.classList.toggle("change");
+}
