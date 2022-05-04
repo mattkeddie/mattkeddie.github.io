@@ -51,7 +51,6 @@ body {
 }
 
 #intro {
-    padding-top: 100px;
     display: flex;
     flex-wrap: wrap;
     font-size: 36pt;
@@ -154,6 +153,10 @@ body {
 .topnav {
     overflow: hidden;
     background-color: rgb(255, 255, 255);
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
   }
   
   .topnav a {
@@ -163,7 +166,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 24pt;
   }
   
   .active {
@@ -210,12 +213,12 @@ body {
   }
   
   .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: #555;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(172, 172, 172);
   }
   
   .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: rgb(255, 255, 255);
     color: black;
   }
   
@@ -245,7 +248,7 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .topnav a:not(:first-child), .dropdown .dropbtn {
       display: none;
     }
@@ -255,7 +258,7 @@ body {
     }
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -273,5 +276,16 @@ body {
       display: block;
       width: 100%;
       text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 1500px) {
+    #intro {
+        flex-direction: column;
+    }
+
+    #face {
+        max-width: 500px;
+        max-height: 500px;
     }
   }
