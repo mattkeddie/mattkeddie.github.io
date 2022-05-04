@@ -265,6 +265,11 @@ body {
     #intro {
         flex-direction: column;
     }
+
+    .content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 @media screen and (max-width: 800px) {
