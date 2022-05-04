@@ -275,9 +275,9 @@ body {
       float: right;
       display: block;
     }
-  }
+}
   
-  @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -296,9 +296,9 @@ body {
       width: 100%;
       text-align: left;
     }
-  }
+}
 
-  @media screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
     #intro {
         flex-direction: column;
     }
@@ -318,7 +318,7 @@ body {
     h1, h2, h3 {
         text-align: center;
     }
-  }
+}
 
 @media screen and (min-width: 1500px) {
     #face {
