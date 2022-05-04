@@ -5,7 +5,7 @@ body {
 
 .right-buttons {
     float: right;
-    
+    margin-right: 16px;
 }
 
 #myname {
