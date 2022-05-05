@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>UG Project | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a id="myname">Matthew Keddie</a>
+        <a href="./index.html" class="right-buttons">Home</a>
+        <a href="./index.html#work" class="right-buttons">Work</a>
+        <a href="./about.html" class="right-buttons">About</a>
+        <a href="javascript:void(0);" style="font-size:18pt;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <div id="rl-scoreboard-description" class="content description">
+        <h1>Educational Web Security Site</h1>
+        <p class="subheading">UNDERGRADUATE PROJECT</p>
+        <p class="description">A concept of a site to be used extra curricularly for students who wish to deepend their understanding of Information Security topics. There is a seemingly apparent skill gap in the sector, however there is also the problem that if a school tried to push this as some sort of mandatory part of a syllabus, it wouldn't appeal to a lot of people. Hence, the premise of this site was to make it somewhat extra-curricular for those who are interested to dive deeper into the world of Information Security and enrich their knowledge.</p>
+        <p class="disclaimer">I do have a report written as part of this project too which goes even more into depth about how it was created, however this will not be distributed unless there is a very good reason for it. The same also goes for access to the GitHub Repository where the code is stored.</p>
+        <div id="ug-project-details">
+            <div id="ug-project-technologies-used" class="flex-child project-technologies">
+                <h4>Technologies Used</h4>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>Bootstrap</p>
+                <p>Django</p>
+            </div>
+            <div id="ug-project-date" class="flex-child project-date">
+                <h4>Date</h4>
+                <p>January 2021 - October 2021</p>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div id="rl-scoreboard-showcase" class="content">
+        <h2>Showcase</h2>
+        <p>Below are some screenshots of every page of the site along with a description of what the goal of each page is and what exactly can be done, as well as discussing potential limitations of the platform. As this is only the concept of the platform, this has been designed around using a LocalHost for hosting the platform, meaning that this is not available for public use. I do also apologise if the screenshots are hard to read, I'm not entirely sure what has caused them to appear weirdly on some resolutions.</p>
+        <h3>Login Page</h3>
+        <p>The first page that will be displayed to all users. You cannot bypass this if you are not logged in, which would be useless anyway as you would have no tasks assigned to you! Every page requires a user to be logged in and if there is no current user then they will be redirected to here. There is also the option for admins to log in.</p>
+        <img src="./assets/ug-project-home.png" id="ug-project-login" class="productScreenshot">
+        <h3>Student Task List</h3>
+        <p>When a user logs in, they will be first greeted by a screen containing a list of all their tasks that are both incomplete and complete. These tasks are user specific as to what they have set to them.</p>
+        <div id="task-list-screenshots">
+            <div id="ug-project-tasklist-top" class="flex-child">
+                <img src="./assets/ug-project-tasklist.png" id="ug-project-tasklist1" class="productScreenshot">
+            </div>
+            <div id="ug-project-tasklist-bottom" class="flex-child">
+                <img src="./assets/ug-project-tasklist-2.png" id="ug-project-tasklist2" class="productScreenshot">
+            </div>
+        </div>
+        <p>With the aforementioned list of tasks, it is entirely possible to filter the list which is done by AJAX. As demonstrated by the below screenshot, you can type part of a category name in and upon clicking search it will display only the relevant category of tasks. When this is blank it shows everything.</p>
+        <img src="./assets/ug-project-tasklist-filtered.png" id="ug-project-tasklist-filtered" class="productScreenshot">
+        <h3>Task Detailed View</h3>
+        <p>If you click view task on any task on the list, you will see a page of the same format as this. From here you can either click to mark the task as complete, or you can view the task.</p>
+        <img src="./assets/ug-project-taskview.png" id="ug-project-task-detail" class="productScreenshot">
+        <h3>Task</h3>
+        <p>If you click link to task, you will have a new tab open with the task inside it.</p>
+        <img src="./assets/ug-project-task.png" id="ug-project-task" class="productScreenshot">
+        <p>If you depending on whether you click the correct or incorrect answer, you will get the relevant feedback.</p>
+        <div id="task-screenshots">
+            <div id="ug-project-task-top" class="flex-child">
+                <img src="./assets/ug-project-task-correct.png" id="ug-project-task-correct" class="productScreenshot">
+            </div>
+            <div id="ug-project-task-bottom" class="flex-child">
+                <img src="./assets/ug-project-task-incorrect.png" id="ug-project-task-incorrect" class="productScreenshot">
+            </div>
+        </div>
+        <h3>Mark Task as Complete</h3>
+        <p>When you finish the task you will wish to mark it as complete. This is as simple as clicking a button, ticking a tick box and then clicking another button!</p>
+        <img src="./assets/ug-project-markascomplete.png" id="ug-project-markascomplete" class="productScreenshot">
+        <p>You will then be redirected back to the task list page where the task you just marked as complete will now appear in green!</p>
+        <img src="./assets/ug-project-tasklist-taskcompleted.png" id="ug-project-tasklist-taskcompleted" class="productScreenshot">
+        <h3>Resource List</h3>
+        <p>This platform is supposed to be made as good as the users make it. There is a space for users to post resources they find useful. Of course, this section can be moderated and inappropriate posts cleared as well as altering user permissions.</p>
+        <img src="./assets/ug-project-resourcelist.png" id="ug-project-resourcelist" class="productScreenshot">
+        <h3>Resource Detailed View</h3>
+        <p>Similar to the task list, clicking on the resource name will take you to a detailed page showing the topic and a brief description of the resource.</p>
+        <img src="./assets/ug-project-resourceview.png" id="ug-project-resourceview" class="productScreenshot">
+        <h3>External Resource</h3>
+        <p>Clicking on the link to the resource will redirect you to what is likely to be an external site depending on the resource. To avoid interruption with the session on the platform, it will open in a new tab.</p>
+        <img src="./assets/ug-project-resourceclicked.png" id="ug-project-resourceclicked" class="productScreenshot">
+        <h3>Admin Login</h3>
+        <p>As mentioned in the login section of this showcase, admins have their own separate login. From this point on we will be focussing only on the admin section of the site. Only users that are a "superuser" may login through this portal.</p>
+        <img src="./assets/ug-project-adminlogin.png" id="ug-project-adminlogin" class="productScreenshot">
+        <h3>Admin View</h3>
+        <p>Admins can control essentially any data held in the database through Django's inbuilt admin view. This has been slightly customised but not that much, mainly just the page title. Here is where they can select what it is they would like to edit.</p>
+        <img src="./assets/ug-project-adminview.png" id="ug-project-adminview" class="productScreenshot">
+        <p>Admins can see any user that is signed up on the platform.</p>
+        <img src="./assets/ug-project-admin-users.png" id="ug-project-admin-users" class="productScreenshot">
+        <p>Along with access to any details that could possibly need viewing or amending.</p>
+        <img src="./assets/ug-project-admin-user-detailed1.png" id="ug-project-admin-user-detailed1" class="productScreenshot">
+        <img src="./assets/ug-project-admin-user-detailed2.png" id="ug-project-admin-user-detailed2" class="productScreenshot">
+        <img src="./assets/ug-project-admin-user-detailed3.png" id="ug-project-admin-user-detailed3" class="productScreenshot">
+        <p>This also applies to tasks where they can view all tasks on the database.</p>
+        <img src="./assets/ug-project-admin-tasks.png" id="ug-project-admin-tasks" class="productScreenshot">
+        <p>They can also edit an existing task or assign a new task.</p>
+        <img src="./assets/ug-project-admin-task-detailed.png" id="ug-project-admin-task-detailed" class="productScreenshot">
+        <p>Lastly, this also applies for resources.</p>
+        <img src="./assets/ug-project-admin-resources.png" id="ug-project-admin-resources" class="productScreenshot">
+        <p>Hopefully this screen will never need to be used by an admin, but there is a big red button here which can delete any inappropriate posts if necessary.</p>
+        <img src="./assets/ug-project-admin-resource-detailed.png" id="ug-project-admin-resource-detailed" class="productScreenshot">
+    </div>
+    <div class="contact-nav">
+        <a href="https://www.linkedin.com/in/matthew-keddie-024338229">LinkedIn</a>
+        <a href="mailto:matt.keddie@hotmail.co.uk">Email</a>
+    </div>
+</body>
+</html>

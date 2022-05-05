@@ -103,48 +103,7 @@ body {
     font-size: 24pt;
 }
 
-#rl-scoreboard-ss {
-    width: 100%;
-    padding-bottom: 50px;
-}
-
-#rl-scoreboard-no-active {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-blue-active {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-orange-active {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-unassisted-goal {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-assisted-goal {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-overtime {
-    width: 100%;
-    padding-bottom: 25px;
-    padding-top: 10px;
-}
-
-#rl-scoreboard-post-game {
+.productScreenshot {
     width: 100%;
     padding-bottom: 25px;
     padding-top: 10px;
@@ -185,6 +144,11 @@ body {
     flex-wrap: wrap;
 }
 
+#ug-project-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .subheading {
     color: grey;
 }
@@ -194,9 +158,49 @@ body {
     text-align: right;
 }
 
+#ug-project-date {
+    width: 30%;
+    text-align: right;
+}
+
 #rl-scoreboard-technologies-used {
     width: 70%;
     flex: auto;
+}
+
+#ug-project-technologies-used {
+    width: 70%;
+    flex: auto;
+}
+
+#task-list-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ug-project-tasklist-top {
+    flex: auto;
+    width: 45%;
+}
+
+#ug-project-tasklist-bottom {
+    flex: auto;
+    width: 45%;
+}
+
+#task-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ug-project-task-top {
+    flex: auto;
+    width: 45%;
+}
+
+#ug-project-task-bottom {
+    flex: auto;
+    width: 45%;
 }
 
 .description {
@@ -323,7 +327,17 @@ h4 {
     margin-bottom: 0px;
 }
 
+#ug-project-details p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 #rl-scoreboard-details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ug-project-details {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -333,9 +347,18 @@ h4 {
     margin-bottom: 10px;
 }
 
+#ug-project-showcase p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
+    }
+
+    #ug-project-details {
+        flex-direction: column;
     }
 
     #rl-scoreboard-technologies-used {
@@ -343,7 +366,17 @@ h4 {
         width: 100%;
     }
 
+    #ug-project-technologies-used {
+        text-align: center;
+        width: 100%;
+    }
+
     #rl-scoreboard-date {
+        text-align: center;
+        width: 100%;
+    }
+
+    #ug-project-date {
         text-align: center;
         width: 100%;
     }
@@ -397,41 +430,49 @@ h4 {
         font-size: 14pt;
     }
 
-    #rl-scoreboard-ss {
-        padding-bottom: 0;
+    #task-list-screenshots {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    #ug-project-tasklist-top {
+        flex: auto;
+        width: 100%;
+    }
+    
+    #ug-project-tasklist-bottom {
+        flex: auto;
+        width: 100%;
     }
 
-    #rl-scoreboard-no-active {
-        padding-bottom: 0;
+    #task-screenshots {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
-
-    #rl-scoreboard-blue-active {
-        padding-bottom: 0;
+    
+    #ug-project-task-top {
+        flex: auto;
+        width: 100%;
     }
-
-    #rl-scoreboard-orange-active {
-        padding-bottom: 0;
-    }
-
-    #rl-scoreboard-unassisted-goal {
-        padding-bottom: 0;
-    }
-
-    #rl-scoreboard-assisted-goal {
-        padding-bottom: 0;
-    }
-
-    #rl-scoreboard-overtime {
-        padding-bottom: 0;
-    }
-
-    #rl-scoreboard-post-game {
-        padding-bottom: 0;
+    
+    #ug-project-task-bottom {
+        flex: auto;
+        width: 100%;
     }
 
     .subheading {
         text-align: center;
-        padding-bottom: 10px;
+        padding-bottom: 50px;
+    }
+
+    .productScreenshot {
+        padding-bottom: 0;
+    }
+
+    .description h1 {
+        margin-bottom: 0;
     }
 }
 
@@ -524,6 +565,10 @@ h4 {
     }
 
     #intro p {
+        margin-top: 10px;
+    }
+
+    .subheading {
         margin-top: 10px;
     }
 }
