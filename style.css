@@ -477,6 +477,11 @@ h4 {
 }
 
 @media screen and (max-width: 800px) {
+    .topnav {
+        position: fixed;
+        transition: none;
+    }
+
     .topnav a:not(:first-child), .dropdown .dropbtn {
       display: none;
     }
