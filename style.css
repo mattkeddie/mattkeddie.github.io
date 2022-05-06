@@ -133,6 +133,7 @@ body {
 .content a {
     text-decoration: none;
     color: orange;
+    text-align: left;
 }
 
 #rl-scoreboard-description {
@@ -401,6 +402,14 @@ h4 {
         margin-bottom: 0;
     }
 
+    .content a {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        width: 100%;
+    }
+
     .content h2 {
         font-size: 24pt;
         padding-bottom: 0px;
@@ -422,12 +431,15 @@ h4 {
         margin-top: 0;
         padding-top: 0;
         font-size: 14pt;
+        text-align: center;
     }
 
     .project-description a{
         margin-top: 0;
         padding-top: 0;
         font-size: 14pt;
+        text-align: center;
+        width: 100%;
     }
 
     #task-list-screenshots {
@@ -474,9 +486,14 @@ h4 {
     .description h1 {
         margin-bottom: 0;
     }
+
+    .content p {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 800px) {
+
     .topnav {
         position: fixed;
         transition: none;
@@ -489,9 +506,7 @@ h4 {
       float: right;
       display: block;
     }
-}
-  
-@media screen and (max-width: 800px) {
+    
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -534,6 +549,10 @@ h4 {
     }
     
     .project-description p{
+        margin-top: 0;
+    }
+
+    .project-description a{
         margin-top: 0;
     }
 
