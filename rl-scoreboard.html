@@ -8,12 +8,12 @@
 <body>
     <div class="topnav" id="myTopnav">
         <a id="myname">Matthew Keddie</a>
-        <a href="./index.html" class="active right-buttons">Home</a>
+        <a href="./index.html" class="right-buttons">Home</a>
         <a href="./index.html#work" class="right-buttons">Work</a>
         <a href="./about.html" class="right-buttons">About</a>
         <a href="javascript:void(0);" style="font-size:18pt;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-    <div id="rl-scoreboard-description" class="content">
+    <div id="rl-scoreboard-description" class="content description">
         <h1>Rocket League Scoreboard</h1>
         <p class="subheading">BROADCAST OVERLAY</p>
         <p class="description">An overlay to be used in the production of matches within the Rocket League eSport. The spectator UI in-game whilst it has no obvious flaws and is perfectly functional, there is a distict lack of detail. Whilst one solution would be to overlay an image file over the screen in the broadcasting software, overlays such as this add further detail for the viewer and after setting up before a match, is completely automated for the remainder of the match. Through the use of a plugin made for the game called Simple Overlay System (or SOS for short), you can connect via a WebSocket connection and have all game data pulled through a relay in real-time! These come in the form of events and then you can use JavaScript to alter the appearance of the overlay based on these events.</p>
@@ -32,30 +32,30 @@
         </div>
     </div>
     <div class="divider"></div>
-    <div id="rl-scoreboard-showcase" class="content">
+    <div id="rl-scoreboard-showcase" class="content description">
         <h2>Showcase</h2>
         <p>Below are some screenshots of the overlay in different states, to show every screen it can show. I expect not everybody looking at this understands the game of Rocket League, so I will do my best to explain what is going on and what the overlay is showing, otherwise it might just look like a load of clutter!</p>
         <h3>Main UI - No Focussed Player</h3>
         <p>This is where for example a round has just started, showing the scoreboard at the top, which displays the Tournament Name, Tournament Stage (Week X, Day X, etc), the Team Names, Match Clock, Match Score, Series Type (and what game it is e.g. Game 3 of a Best of 5) and the series score, along with the player names of everyone on each team and how much "boost" they have. For context, boost is a resource that will spawn around the map, collecting it will allow you to travel at a faster speed, an important aspect of the game, hence showing every player's amount of the resource.</p>
-        <img src="./assets/rl-scoreboard-no-active.png" id="rl-scoreboard-no-active">
+        <img src="./assets/rl-scoreboard-no-active.png" id="rl-scoreboard-no-active" class="productScreenshot">
         <h3>Main UI - Focussed Player (Blue Team)</h3>
         <p>This is where all of the above is displayed, but the spectator client in game is focussed on a player from the blue team (it does't necessarily have to be blue, it is labbeled as team '0' in the data, but in most cases it is blue, hence referring to it as such). It will show on the bottom of the screen the name of the focussed player, some detailed stats like how many shots/goals/etc that they have got in this game, and a boost metre in the bottom right corner (100 is full, 0 is empty). All of these elements have a blue theme as it is the blue team.</p>
-        <img src="./assets/rl-scoreboard-blue-active.png" id="rl-scoreboard-blue-active">
+        <img src="./assets/rl-scoreboard-blue-active.png" id="rl-scoreboard-blue-active" class="productScreenshot">
         <h3>Main UI - Focussed Player (Orange Team)</h3>
         <p>As above, except it is the orange team (otherwise known as team '1' in the data).</p>
-        <img src="./assets/rl-scoreboard-orange-active.png" id="rl-scoreboard-orange-active">
+        <img src="./assets/rl-scoreboard-orange-active.png" id="rl-scoreboard-orange-active" class="productScreenshot">
         <h3>Goal Scored - Unassisted</h3>
         <p>When a goal is scored, there is always a goal scorer and ball speed at the time the ball went into the goal attribute in the event read by the JavaScript code. There isn't necessarily always an assist for the goal. This shows the goal scorer and the ball speed as well as an indicator that it is a replay and is not the players playing live to avoid viewer confusion.</p>
-        <img src="./assets/rl-scoreboard-unassisted-goal.png" id="rl-scoreboard-unassisted-goal">
+        <img src="./assets/rl-scoreboard-unassisted-goal.png" id="rl-scoreboard-unassisted-goal" class="productScreenshot">
         <h3>Goal Scored - Assisted</h3>
         <p>As above, but including the player name of whoever got the Assist for the goal.</p>
-        <img src="./assets/rl-scoreboard-assisted-goal.png" id="rl-scoreboard-assisted-goal">
+        <img src="./assets/rl-scoreboard-assisted-goal.png" id="rl-scoreboard-assisted-goal" class="productScreenshot">
         <h3>Main UI - Overtime!</h3>
         <p>A Rocket League game is five minutes long, after five minutes if there is no winner then there will be overtime. This is technically infinite, although highly unlikely to go more than a few minutes with the nature of the game. Overtime follows a "next goal wins" format. If you score, you win, the other team scores, you lose! This provides for a gripping viewer experience.</p>
-        <img src="./assets/rl-scoreboard-overtime.png" id="rl-scoreboard-overtime">
+        <img src="./assets/rl-scoreboard-overtime.png" id="rl-scoreboard-overtime" class="productScreenshot">
         <h3>Post Match - Scoreboard</h3>
         <p>When all is said and done, it is nice to see who the key performers were in a match, who did well and who maybe weren't so involved. The end game stat screen retains all data such as shots/goals/etc and spits it out into a table at the end of the match, to draw easy comparisons between players. This screen will stay active until the next game in the series starts.</p>
-        <img src="./assets/rl-scoreboard-post-game.png" id="rl-scoreboard-post-game">
+        <img src="./assets/rl-scoreboard-post-game.png" id="rl-scoreboard-post-game" class="productScreenshot">
     </div>
     <div class="contact-nav">
         <a href="https://www.linkedin.com/in/matthew-keddie-024338229">LinkedIn</a>
