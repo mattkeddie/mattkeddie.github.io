@@ -468,7 +468,6 @@ h4 {
 @media screen and (max-width: 1500px) {
     #intro {
         flex-direction: column;
-        padding-top: 10px;
     }
 
     #face {
