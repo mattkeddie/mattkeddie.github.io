@@ -57,18 +57,17 @@ body {
 .content {
     padding-left: 20%;
     padding-right: 20%;
-    padding-top: 20px;
 }
 
 #intro {
     display: flex;
     flex-wrap: wrap;
     font-size: 36pt;
+    padding-top: 40px;
 }
 
 #face {
     width: 100%;
-
 }
 
 #intro h1 {
@@ -469,6 +468,7 @@ h4 {
 @media screen and (max-width: 1500px) {
     #intro {
         flex-direction: column;
+        padding-top: 10px;
     }
 
     #face {
