@@ -332,6 +332,12 @@ h4 {
     margin-bottom: 10px;
 }
 
+.productScreenshot {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
