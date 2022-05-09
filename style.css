@@ -338,6 +338,18 @@ h4 {
     padding-bottom: 25px;
 }
 
+#projectsIntro {
+    text-align: center;
+}
+
+#interests p {
+    text-align: center;
+}
+
+#academic-text {
+    text-align: center;
+}
+
 @media (max-width: 800px) {
     #rl-scoreboard-details {
       flex-direction: column;
@@ -360,6 +372,7 @@ h4 {
     #intro {
         flex-direction: column;
         margin-top: 50px;
+        padding-top: 10px;
     }
 
     .content {
@@ -441,6 +454,10 @@ h4 {
     .subheading {
         text-align: center;
         padding-bottom: 10px;
+    }
+
+    #interests p {
+        padding-top: 5px;
     }
 }
 
