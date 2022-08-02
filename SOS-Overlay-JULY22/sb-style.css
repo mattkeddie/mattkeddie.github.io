@@ -1,0 +1,1010 @@
+body {
+  width: 1920px;
+  height: 1080px;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.1rem;
+}
+
+.player-box {
+  width: 263px;
+  height: 50px;
+  margin: 0px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: black;
+}
+
+.active-box {
+  width: 280px;
+  height: 200px;
+}
+
+.timer-box {
+  width: 300px;
+  height: 125px;
+}
+
+.map-box {
+  width: 380px;
+  height: 300px;
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+
+}
+
+#blue-team-name {
+  background: linear-gradient(90deg, rgb(5, 107, 251), black 50%);
+  border-bottom: rgb(5, 107, 251) 10px solid;
+}
+
+#blue-name-endscoreboard {
+  background: linear-gradient(90deg, rgb(5, 107, 251), #262626 50%);
+  border-bottom: rgb(5, 107, 251) 10px solid;
+}
+
+#orange-team-name {
+  background: linear-gradient(270deg, orange, black 50%);
+  border-left: black 3px solid;
+  border-bottom: orange 10px solid;
+}
+
+#orange-name-endscoreboard {
+  background: linear-gradient(280deg, #262626, orange 50%);
+  border-bottom: orange 10px solid;
+}
+
+.goalScoredAnimation {
+  animation: goalScored 1s 3;
+}
+
+@keyframes goalScored {
+  0%{		color: transparent;	}
+	49%{	color: white;	}
+	100%{	color: transparent;	}
+}
+
+.bg-blue-team {
+  background-color: rgb(5, 107, 251);
+  border-bottom: rgb(5, 107, 251) 10px solid;
+}
+
+.bg-orange-team {
+  background-color: orange;
+  border-bottom: orange 10px solid;
+}
+
+.orangePlayers {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+
+.orange-player-name {
+  text-align: right;
+  margin-right: 3px;
+}
+
+.orange-boost {
+  text-align: left;
+  float: left;
+}
+
+.bluePlayers {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+.orangePlayers {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+}
+
+#blueTeam {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation-duration: 2s;
+}
+
+#blue-player-3 {
+  animation-duration: 1s;
+  position: absolute;
+  left: 0;
+  top: 130px;
+}
+
+#blue-player-2 {
+  animation-duration: 1s;
+  position: absolute;
+  left: 0;
+  top: 70px;
+}
+
+#blue-player-1 {
+  animation-duration: 1s;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+@keyframes bluePlayersIn {
+  0%   {left:-300px;}
+  100%  {left:0px;}
+}
+
+@keyframes bluePlayersOut {
+  0%   {left:0px;}
+  100%  {left:-300px;}
+}
+
+@keyframes orangePlayersIn {
+  0%   {right:-300px;}
+  100%  {right:0px;}
+}
+
+@keyframes orangePlayersOut {
+  0%   {right:0px;}
+  100%  {right:-300px;}
+}
+
+#orange-player-3 {
+  animation-duration: 1s;
+  position: absolute;
+  right: 0;
+  top: 130px;
+}
+
+#orange-player-2 {
+  animation-duration: 1s;
+  position: absolute;
+  right: 0;
+  top: 70px;
+}
+
+#orange-player-1 {
+  animation-duration: 1s;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+#orangeTeam {
+  position: absolute;
+  top: 12.5px;
+  right: 0px;
+  animation-duration: 2s;
+}
+
+.scorebug {
+  color: white;
+  font-size: 28pt;
+  position: absolute;
+  top: 0;
+  left: 390px;
+}
+
+#scorebug-div {
+  animation-duration: 2s;
+  opacity: 0;
+}
+
+@keyframes scorebugIn {
+  0%    {top: -150px;}
+  100%  {top: 0px;}
+}
+
+@keyframes scorebugOut {
+  0%    {top: 0px;}
+  100%  {top: -150px;}
+}
+
+#end-scorebug-div {
+  color: white;
+  font-size: 28pt;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#end-scoreboard {
+  color: white;
+  font-size: 28pt;
+  transform: skew(0deg);
+}
+
+#overtime-text {
+  padding-left: 17px;
+  padding-right: 17px;
+  background: radial-gradient(circle, red, rgb(124, 0, 0));
+  font-size: 16pt;
+  font-weight: bold;
+  position: absolute;
+  left: 446px;
+  top: 98px;
+  text-align: center;
+  height: 33px;
+  color: white;
+  transform: skew(340deg);
+  opacity: 0;
+}
+
+#timer {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: black;
+  border-bottom: black 10px solid;
+}
+
+#blue-score {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(5, 107, 251);
+  border-left: 10px black solid;
+}
+
+#blue-score-endscoreboard {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(5, 107, 251);
+  border-left: 3.25px black solid;
+  width: 90px;
+  max-width: 90px;
+  min-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  border-bottom: rgb(5, 107, 251) 10px solid;
+}
+
+#orange-score {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: orange;
+  border-right: 10px black solid;
+}
+
+#orange-score-endscoreboard {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: orange;
+  border-right: 3.25px black solid;
+  width: 90px;
+  max-width: 90px;
+  min-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  border-bottom: orange 10px solid;
+}
+
+#blue-team-name {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: right;
+}
+
+#blue-name-endscoreboard {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: right;
+  width: 708px;
+  max-width: 708px;
+  min-width: 708px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+
+#orange-team-name {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#orange-name-endscoreboard {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  width: 708px;
+  max-width: 708px;
+  min-width: 708px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+
+.game-info {
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 16pt;
+  font-weight: bold;
+  background-color: black;
+  margin-bottom: 0;
+  margin-left: 6.5%;
+  margin-top: 0px;
+  transform: skew(340deg);
+}
+
+.game-info>p {
+  margin-bottom: 0;
+}
+
+.team-name {
+  width: 460px;
+}
+
+#series-info {
+  padding-left: 0px;
+  padding-right: 0px;
+  background: none;
+  font-size: 16pt;
+  height: 15px;
+  position: absolute;
+  top: 96px;
+  left: 197px;
+  transform: skew(340deg);
+}
+
+#series-type {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: black;
+  width: 238px;
+  max-width: 238px;
+  min-width: 238px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  display: inline-block;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+}
+
+#series-score {
+  background: none;
+  position: absolute;
+  top: 250px;
+  left: 250px;
+}
+
+.light {
+  width: 50px;
+  height: 10px;
+  display: inline-block;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+
+.inactive-light {
+  background: rgb(52, 52, 52);
+}
+
+#blue-games {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 2px;
+  width: 250px;
+}
+
+#blue-lights {
+  /*background:rgb(0, 49, 117);*/
+  background: black;
+  height: 25px;
+  margin-top: -7px;
+}
+
+.blueLight {
+  background: rgb(5, 107, 251);
+}
+
+.orangeLight {
+  background: orange;
+}
+
+#orange-games {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 2px;
+  width: 250px;
+}
+
+#orange-lights {
+  /*background:rgb(105, 77, 0);*/
+  background: black;
+  height: 25px;
+  margin-top: -7px;
+}
+
+.gamelights {
+  height: 20px;
+  width: 50px;
+}
+
+#blueTeam {
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.col {
+  padding: 0px;
+}
+
+.m-4 {
+  margin: 0rem !important;
+  margin-left: 0.9rem!important;
+}
+
+
+#active-player {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  left: -8px;
+  background: black;
+  transform: skew(340deg);
+  border-top: black 5px solid;
+  border-right: black 5px solid;
+}
+
+#active-player .label {
+  font-size: 12pt;
+  font-style: italic;
+  text-align: right;
+  padding-top: 2px;
+  max-width: 70px;
+  min-width: 70px;
+  width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+
+#active-player .score {
+  font-size: 18pt;
+  padding: 5px;
+  padding-right: 0px;
+  width: 40px;
+  max-width: 70px;
+  min-width: 70px;
+  width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  text-align: center;
+}
+
+#active-player .stat {
+  font-size: 18pt;
+  padding: 5px;
+  padding-right: 0px;
+  width: 40px;
+  max-width: 35px;
+  min-width: 35px;
+  width: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  text-align: center;
+}
+
+#active-name {
+  max-width: 420px;
+  min-width: 420px;
+  width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  background-color: black;
+  padding-right: 20px;
+  font-size: 18pt;
+}
+
+#active-name-text {
+  max-width: 400px;
+  min-width: 400px;
+  width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  padding-right: 20px;
+}
+
+#active-boost {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+
+#goal-replay {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  height: 85%;
+  width: 1980px;
+  color: white;
+  font-weight: 700;
+}
+
+#goal-info-table {
+  position: absolute;
+  top: 700px;
+  left: 575px;
+  font-size: 28pt;
+  width: 800px;
+  transform: skew(340deg);
+  background: black;
+}
+
+.goal-details {
+  padding-left: 40px;
+  transform: skew(-340deg);
+}
+
+#replay {
+  opacity: 100%;
+  color: crimson;
+  font-size: 36pt;
+  font-style: bold;
+  padding: 50px;
+}
+
+#replayDot{
+  animation: replayBlink 1s infinite;
+}
+
+@keyframes replayIn {
+  0%{ left: -260px;}
+  100%{ left: 0px;}
+}
+
+@keyframes replayOut {
+  0%{ left: 0px;}
+  100%{ left: -260px;}
+}
+
+@keyframes replayBlink{
+	0%{		stroke: transparent;	fill: transparent;}
+	50%{	stroke: crimson;	fill: crimson;	}
+	100%{	stroke: transparent;	fill: transparent;	}
+}
+
+#replay-banner {
+  background: black;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  filter: drop-shadow(0 0 10px crimson);
+  animation-duration: 1s;
+}
+
+#post-game-scores {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  text-align: center;
+}
+
+#post-game-scores tr {
+  height: 90px;
+  border-bottom: rgba(0, 0, 0, 0.5) 3px solid;
+}
+
+#post-game-scores .stat {
+  color: white;
+  font-size: 28pt;
+  text-align: center;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+#post-game-scores .label {
+  color: white;
+  font-size: 28pt;
+  text-align: center;
+  font-style: italic;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+#post-game-scores .player-name-box {
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  display: inline-block;
+}
+
+#post-game-scores2 {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  text-align: center;
+}
+
+#post-game-scores2 tr {
+  height: 90px;
+  border-bottom: rgba(0, 0, 0, 0.5) 3px solid;
+}
+
+#post-game-scores2 .stat {
+  color: white;
+  font-size: 28pt;
+  text-align: center;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+#post-game-scores2 .label {
+  color: white;
+  font-size: 28pt;
+  text-align: center;
+  font-style: italic;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+#post-game-scores2 .player-name-box {
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  display: inline-block;
+}
+
+#scoreboard-spacer {
+  padding: 20px;
+}
+
+#blue-stat-board {
+  background: linear-gradient(20deg, rgb(5, 107, 251), rgb(0, 49, 117) 85%);
+}
+
+#orange-stat-board {
+  background: linear-gradient(20deg,  orange,rgb(105, 77, 0)  85%);
+}
+
+.blue-player {
+  background: black;
+}
+
+.blue-active-player {
+  background: linear-gradient(90deg, rgb(5, 107, 251), black 50%);
+}
+
+.orange-player {
+  background: black;
+}
+
+.orange-active-player {
+  background: linear-gradient(270deg, orange, black 50%);
+}
+
+.blue-p-name-and-boost {
+  margin-left: 10px;
+  padding-right: 10%;
+}
+
+.blue-p-name {
+  width: 189px;
+  max-width: 189px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+
+.blue-p-boost {
+  width: 62px;
+  max-width: 62px;
+  position: absolute;
+  right: -2px;
+}
+
+.blue-p-name h4 {
+  font-size: 16pt;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.blue-p-boost h4 {
+  font-size: 16pt;
+  padding-top: 5px;
+  padding-right: 13px;
+  text-align: right;
+}
+
+.orange-p-name-and-boost {
+  margin-right: 10px;
+  padding-left: 10%;
+}
+
+.orange-p-name {
+  width: 189px;
+  max-width: 189px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  position: relative;
+  right: -64px;
+}
+
+.orange-p-boost {
+  width: 62px;
+  max-width: 62px;
+  position: absolute;
+  left: -5px;
+}
+
+.orange-p-name h4 {
+  font-size: 16pt;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.orange-p-boost h4 {
+  font-size: 16pt;
+  padding-top: 5px;
+  padding-left: 15px;
+  text-align: left;
+}
+
+#goal-info {
+  color: white;
+}
+
+.statfeed-icon {
+  padding-right: 30px;
+  opacity: 100%;
+  filter: invert(1);
+  background: rgba(255, 255, 255, 0);
+  margin-top: -12px;
+}
+
+.statfeed-icon-nm {
+  padding-right: 30px;
+  opacity: 100%;
+  filter: invert(1);
+  background: rgba(255, 255, 255, 0);
+  margin-top: -3px;
+}
+
+#scorer {
+  width: 780px;
+  max-width: 780px;
+  min-width: 780px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+
+#assister {
+  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  display: inline-block;
+  padding-top: 10px;
+}
+#goal-speed {
+  width: 270px;
+  max-width: 270px;
+  min-width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+#rl-logo {
+  position: absolute;
+  top: 100px;
+  left: 520px;
+  opacity: 0.4; 
+  filter: blur(8px) invert(1);
+  -webkit-filter: blur(8px);
+}
+
+.score-table {
+  transform: skew(340deg);
+}
+
+.scoreboard-text {
+  transform: skew(-340deg);
+  display: inline-block;
+}
+
+#assister-and-speed {
+  margin-bottom: 20px;
+  height: 60px;
+}
+
+#goal-team-colour {
+  background-color: white;
+  width: 100%;
+  height: 10px;
+}
+
+.replay-text {
+  margin-top: 20px;
+}
+
+#scorer-name {
+  font-size: 36pt;
+}
+
+#scorer-name-and-icon {
+  margin-bottom: 0px;
+  height: 80px;
+}
+
+#stinger {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.statfeed-element {
+  height: 35px;
+  width: 400px;
+  background-color: black;
+  color: white;
+  font-size: 16pt;
+  transform: skew(340deg);
+  padding: 0px;
+  text-align: center;
+}
+
+#statfeed1 {
+  position: absolute;
+  right: 0;
+  top: 200px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+#statfeed2 {
+  position: absolute;
+  right: 0;
+  top: 240px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+#statfeed3 {
+  position: absolute;
+  right: 0;
+  top: 280px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+#statfeed4 {
+  position: absolute;
+  right: 0;
+  top: 320px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+#statfeed5 {
+  position: absolute;
+  right: 0;
+  top: 360px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+#statfeed6 {
+  position: absolute;
+  right: 0;
+  top: 400px;
+  opacity: 0;
+  animation-duration: 1s;
+}
+.eventName {
+  font-size: 14pt;
+  width: 100px;
+  max-width: 100px;
+  min-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  height: 100%;
+}
+.secondary-target {
+  width: 0px;
+  max-width: 0px;
+  min-width: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+}
+.main-target{
+  width: 300px;
+  max-width: 300px;
+  min-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Don't forget this one */
+  height: 100%;
+  margin-left: 0px;
+}
+.statfeed-text {
+  transform:skew(-340deg)
+}
+
+@keyframes statfeedIn {
+  0%   {right:-400px;}
+  100%  {right:0px;}
+}
+
+@keyframes statfeedOut {
+  0%   {right:0px;}
+  100%  {right:-400px;}
+}
+
+.statfeedIn {
+  animation-name: statfeedIn;
+}
+.statfeedOut {
+  animation-name: statfeedOut;
+}
+
+#league-logo {
+  position: absolute;
+  top: 325px;
+  left: 0px;
+  background: black;
+  filter: drop-shadow(0 0 10px white);
+  padding: 10px;
+  animation-duration: 2s;
+  opacity: 0;
+}
+
+.leagueLogoIn {
+  animation-name: leagueLogoIn;
+}
+
+.leagueLogoOut {
+  animation-name: leagueLogoIn;
+}
+
+@keyframes leagueLogoIn {
+  0% {left: -300px;}
+  100% {left: 0px;}
+}
+
+@keyframes leagueLogoOut {
+  0% {left: 0px;}
+  100% {left: -300px;}
+}

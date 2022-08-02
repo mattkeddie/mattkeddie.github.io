@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>RL Scoreboard Overlay</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-transform/1.0.4/d3-transform.min.js"
+    integrity="sha512-mxtQ5axoakkabgk9lnYJsaCL+BryRmZ4py80vqOf8UIbZhwc+m1bqmnge6Khd7sOLh2gPFCaKiynJEnqR79CaA=="
+    crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="contianer h-100" id="main-ui">
+    <div class="row h-100">
+      <!-- blue team code-->
+        <div id="blueTeam" class="d-flex align-items-start flex-column">
+          <!-- blue team boxes-->
+          <div class="bluePlayers" id="allBlueBoxes">
+              <!-- blue player 1 -->
+              <div class="player-box rounded mt-2 d-none blue-player" id="blue-player-1">
+                <!-- players name -->
+                <table class="blue-p-name-and-boost">
+                  <tr>
+                    <th class="blue-p-name">
+                      <h4 id="blue-player-1-name">name</h4>
+                    </th>
+                    <th class="blue-p-boost">
+                      <h4 id="blue-player-1-boost"></h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0"
+                  style="height: 10px; width: 95%; bottom: 0px; background-color: black; margin:auto">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #3575dc;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-1-p-bar">
+
+                  </div>
+                </div>
+              </div>        
+
+              <!-- blue player 2 -->
+              <div class="player-box rounded mt-2 d-none blue-player" id="blue-player-2">
+                <!-- players name -->
+                <table class="blue-p-name-and-boost">
+                  <tr>
+                    <th class="blue-p-name">
+                      <h4 id="blue-player-2-name">name</h4>
+                    </th>
+                    <th class="blue-p-boost">
+                      <h4 id="blue-player-2-boost"></h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0"
+                  style="height: 10px; width: 95%; bottom: 0px; background: black; margin: auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #3575dc;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-2-p-bar">
+                  </div>
+                </div>
+              </div>
+
+              <!-- blue player 3 -->
+              <div class="player-box rounded mt-2 d-none blue-player" id="blue-player-3">
+                <!-- players name -->
+                <table class="blue-p-name-and-boost">
+                  <tr>
+                    <th class="blue-p-name">
+                      <h4 id="blue-player-3-name">name</h4>
+                    </th>
+                    <th class="blue-p-boost">
+                      <h4 id="blue-player-3-boost"></h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0"
+                  style="height: 10px; width: 95%; bottom: 0px; background-color: black; margin: auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #3575dc;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-3-p-bar">
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+      <!--SCOREBOARD-->
+      <div class="scorebug" id="scorebug-div">
+        <!--TOP INFO CARD-->
+        <div class="game-info">
+          <p class="scoreboard-text"><span id="tournamentName"></span><span id="tournamentStage"></span></p>
+        </div>
+        <!--TEAM NAMES/SCORE/CLOCK-->
+        <table class="score-table">
+          <tr class="scores">
+            <th class="team-name" id="blue-team-name"><span id="blue-team-name-text" class="scoreboard-text"></span> </th>
+            <th id="blue-score" class="bg-blue-team"><span id="blue-score-text" class="scoreboard-text"></span></th>
+            <th id="timer"><span id="timer-text" class="scoreboard-text"></span></th>
+            <th id="orange-score" class="bg-orange-team"><span id="orange-score-text" class="scoreboard-text"></span></th>
+            <th class="team-name" id="orange-team-name"><span id="orange-team-name-text" class="scoreboard-text"></span></th>    
+          </tr>
+        </table>
+        <!--SERIES INFO BOTTOM CARD-->
+        <table id="series-info">
+          <th id="blue-games">
+            <div id="blue-lights">
+              <div id="blue-g4" class="light inactive-light"></div>
+              <div id="blue-g3" class="light inactive-light"></div>
+              <div id="blue-g2" class="light inactive-light"></div>
+              <div id="blue-g1" class="light inactive-light"></div>
+            </div>
+          </th>
+          <th id="series-type"><div class="scoreboard-text">GAME <span id="gameNumber"></span> | <span id="seriesType"></span></div></th>
+          <th id="orange-games">
+            <div id="orange-lights">
+              <div id="orange-g1" class="light inactive-light"></div>
+              <div id="orange-g2" class="light inactive-light"></div>
+              <div id="orange-g3" class="light inactive-light"></div>
+              <div id="orange-g4" class="light inactive-light"></div>
+            </div>
+          </th>
+        </table>
+        <div id="overtime-text"><div class="scoreboard-text">GAME <span id="ot-gameNumber"></span> | OVERTIME</div></div>
+
+      </div>      
+      <!-- orange team code -->
+        <div id="orangeTeam" class="d-flex align-items-end flex-column">
+          <!-- orange team boxes-->
+          <div class="orangePlayers">
+              <!-- orange player 1 -->
+              <div class="player-box rounded mt-2 d-none orange-player" id="orange-player-1">
+                <!-- players name -->
+                <table class="orange-p-name-and-boost">
+                  <tr>
+                    <th class="orange-p-boost">
+                      <h4 id="orange-player-1-boost"></h4>
+                    </th>
+                    <th class="orange-p-name">
+                      <h4 id="orange-player-1-name">name</h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0 justify-content-end"
+                  style="height: 10px; width: 95%; bottom: 0px; background-color: black; margin:auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #F4924A;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-1-p-bar">
+                  </div>
+                </div>
+              </div>
+
+              <!-- orange player 2 -->
+              <div class="player-box rounded mt-2 d-none orange-player" id="orange-player-2">
+                <!-- players name -->
+                <table class="orange-p-name-and-boost">
+                  <tr>
+                    <th class="orange-p-boost">
+                      <h4 id="orange-player-2-boost"></h4>
+                    </th>
+                    <th class="orange-p-name">
+                      <h4 id="orange-player-2-name">name</h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0 justify-content-end"s
+                  style="height: 10px; width: 95%; bottom: 0px; background-color: black; margin:auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #F4924A;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-2-p-bar">
+                  </div>
+                </div>
+              </div>
+
+              <!-- orange player 3 -->
+              <div class="player-box rounded mt-2 d-none orange-player" id="orange-player-3">
+                <!-- players name -->
+                <table class="orange-p-name-and-boost">
+                  <tr>
+                    <th class="orange-p-boost">
+                      <h4 id="orange-player-3-boost"></h4>
+                    </th>
+                    <th class="orange-p-name">
+                      <h4 id="orange-player-3-name">name</h4>
+                    </th>
+                  </tr>
+                </table>
+                <!-- boost bar -->
+                <div class="progress mx-auto rounded-0 justify-content-end"
+                  style="height: 10px; width: 95%; bottom: 0px; background-color: black; margin:auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #F4924A;"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-3-p-bar">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="league-logo">
+    <img src="./Summer 2022.png" height="150px" width="150px">
+  </div>
+
+    <table id="statfeed1" class="statfeed-element">
+      <tr>
+        <th id="statfeed1-maintarget" class="main-target"><span id="sf1-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed1-eventname" class="eventName"><span id="sf1-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed1-secondarytarget" class="secondary-target"><span id="sf1-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+    <table id="statfeed2" class="statfeed-element">
+      <tr>
+        <th id="statfeed2-maintarget" class="main-target"><span id="sf2-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed2-eventname" class="eventName"><span id="sf2-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed2-secondarytarget" class="secondary-target"><span id="sf2-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+    <table id="statfeed3" class="statfeed-element">
+      <tr>
+        <th id="statfeed3-maintarget" class="main-target"><span id="sf3-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed3-eventname" class="eventName"><span id="sf3-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed3-secondarytarget" class="secondary-target"><span id="sf3-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+    <table id="statfeed4" class="statfeed-element">
+      <tr>
+        <th id="statfeed4-maintarget" class="main-target"><span id="sf4-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed4-eventname" class="eventName"><span id="sf4-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed4-secondarytarget" class="secondary-target"><span id="sf4-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+    <table id="statfeed5" class="statfeed-element">
+      <tr>
+        <th id="statfeed5-maintarget" class="main-target"><span id="sf5-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed5-eventname" class="eventName"><span id="sf5-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed5-secondarytarget" class="secondary-target"><span id="sf5-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+    <table id="statfeed6" class="statfeed-element">
+      <tr>
+        <th id="statfeed6-maintarget" class="main-target"><span id="sf6-mt-text" class="statfeed-text"></span></th>
+        <th id="statfeed6-eventname" class="eventName"><span id="sf6-en-text" class="statfeed-text"></span></th>
+        <th id="statfeed6-secondarytarget" class="secondary-target"><span id="sf6-st-text" class="statfeed-text"></span></th>
+      </tr> 
+    </table>
+
+  <!--POST GAME SCOREBOARD-->
+  <div class="invisible" id="rl-logo">
+    <img src="./rl-logo-black.png" id="rl-logo-black">
+  </div>
+  <div id="post-game-scores" class="invisible">
+    <table class="score-table" id="end-scoreboard">
+      <tr class="scores">
+        <th class="team-name" id="blue-name-endscoreboard"></th>
+        <th id="blue-score-endscoreboard"></th>
+        <th style="font-size: 18pt; padding-left: 7px; padding-right: 7px; background: black; border-bottom: black 10px solid;">Game <span id="final-gameNumber"></span><br><span id="final-seriesType"></span></th>
+        <th id="orange-score-endscoreboard"></th>
+        <th class="team-name" id="orange-name-endscoreboard"></th>    
+      </tr>
+    </table>
+    <table id="post-game" class="post-game-scores">
+      <tr>
+        <th><span id="blue-player-3-name-endsb" class="player-name-box stat"></span></th>
+        <th><span id="blue-player-2-name-endsb" class="player-name-box stat"></span></th>
+        <th><span id="blue-player-1-name-endsb" class="player-name-box stat"></span></th>
+        <th class="label">PLAYER</th>
+        <th><span id="orange-player-1-name-endsb" class="player-name-box stat"></span></th>
+        <th><span id="orange-player-2-name-endsb" class="player-name-box stat"></span></th>
+        <th><span id="orange-player-3-name-endsb" class="player-name-box stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-score" class="stat"></span></th>
+        <th><span id="blue-player-2-score" class="stat"></span></th>
+        <th><span id="blue-player-1-score" class="stat"></span></th>
+        <th class="label">SCORE
+          <div id="score-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+                  <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="score-comparison">
+                  </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-score" class="stat"></span></th>
+        <th><span id="orange-player-2-score" class="stat"></span></th>
+        <th><span id="orange-player-3-score" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-goals" class="stat"></span></th>
+        <th><span id="blue-player-2-goals" class="stat"></span></th>
+        <th><span id="blue-player-1-goals" class="stat"></span></th>
+        <th class="label">GOALS
+          <div id="goals-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;"
+              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="goals-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-goals" class="stat"></span></th>
+        <th><span id="orange-player-2-goals" class="stat"></span></th>
+        <th><span id="orange-player-3-goals" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-assists" class="stat"></span></th>
+        <th><span id="blue-player-2-assists" class="stat"></span></th>
+        <th><span id="blue-player-1-assists" class="stat"></span></th>
+        <th class="label">ASSISTS
+          <div id="assists-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;"
+              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="assists-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-assists" class="stat"></span></th>
+        <th><span id="orange-player-2-assists" class="stat"></span></th>
+        <th><span id="orange-player-3-assists" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-saves" class="stat"></span></th>
+        <th><span id="blue-player-2-saves" class="stat"></span></th>
+        <th><span id="blue-player-1-saves" class="stat"></span></th>
+        <th class="label">SAVES 
+          <div id="saves-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;" 
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="saves-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-saves" class="stat"></span></th>
+        <th><span id="orange-player-2-saves" class="stat"></span></th>
+        <th><span id="orange-player-3-saves" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-shots" class="stat"></span></th>
+        <th><span id="blue-player-2-shots" class="stat"></span></th>
+        <th><span id="blue-player-1-shots" class="stat"></span></th>
+        <th class="label">SHOTS 
+          <div id="shots-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;" 
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="shots-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-shots" class="stat"></span></th>
+        <th><span id="orange-player-2-shots" class="stat"></span></th>
+        <th><span id="orange-player-3-shots" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-demos" class="stat"></span></th>
+        <th><span id="blue-player-2-demos" class="stat"></span></th>
+        <th><span id="blue-player-1-demos" class="stat"></span></th>
+        <th class="label">DEMOS
+          <div id="demos-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;" 
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="demos-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-demos" class="stat"></span></th>
+        <th><span id="orange-player-2-demos" class="stat"></span></th>
+        <th><span id="orange-player-3-demos" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-touches" class="stat"></span></th>
+        <th><span id="blue-player-2-touches" class="stat"></span></th>
+        <th><span id="blue-player-1-touches" class="stat"></span></th>
+        <th class="label">TOUCHES
+          <div id="touches-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;" 
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="touches-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-touches" class="stat"></span></th>
+        <th><span id="orange-player-2-touches" class="stat"></span></th>
+        <th><span id="orange-player-3-touches" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-avg-speed" class="stat"></span></th>
+        <th><span id="blue-player-2-avg-speed" class="stat"></span></th>
+        <th><span id="blue-player-1-avg-speed" class="stat"></span></th>
+        <th class="label">AVG. SPD
+          <div id="speed-comparison-bg" class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 10px; width: 80%; bottom: 0px; background-color: rgb(5, 107, 251); margin:auto;">
+            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: orange;" 
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="avg-speed-comparison">
+            </div>
+          </div>
+        </th>
+        <th><span id="orange-player-1-avg-speed" class="stat"></span></th>
+        <th><span id="orange-player-2-avg-speed" class="stat"></span></th>
+        <th><span id="orange-player-3-avg-speed" class="stat"></span></th>
+      </tr>
+      <tr>
+        <th><span id="blue-player-3-goalPart" class="stat"></span></th>
+        <th><span id="blue-player-2-goalPart" class="stat"></span></th>
+        <th><span id="blue-player-1-goalPart" class="stat"></span></th>
+        <th class="label">PART.</th>
+        <th><span id="orange-player-1-goalPart" class="stat"></span></th>
+        <th><span id="orange-player-2-goalPart" class="stat"></span></th>
+        <th><span id="orange-player-3-goalPart" class="stat"></span></th>
+      </tr>
+    </table>
+  </div>
+
+  <!--ACTIVE PLAYER NAME/STATS/BOOST-->
+
+  <div class="invisible" id="active-player">
+    <!--ACTIVE PLAYER NAME AND STATS-->
+    <table>
+      <tr>
+        <th id="active-name" style="padding-left: 40px;"><span id="active-name-text" class="scoreboard-text"></span></th>
+        <th class="label scoreboard-text" style="padding-left: 20px;"><div>SCORE</div></th>
+        <th id="active-score" class="score"  style="padding-bottom: 11px; transform: skew(-340deg);"><span id="active-score-text" class="scoreboard-text"></span></th>
+        <th class="label scoreboard-text">GOALS</th>
+        <th id="active-goals" class="stat scoreboard-text"></th>
+        <th class="label scoreboard-text">SHOTS</th>
+        <th id="active-shots" class="stat scoreboard-text"></th>
+        <th class="label scoreboard-text">ASSISTS</th>
+        <th id="active-assists" class="stat scoreboard-text"></th>
+        <th class="label scoreboard-text">SAVES</th>
+        <th id="active-saves" class="stat scoreboard-text"></th>
+        <th class="label scoreboard-text">DEMOS</th>
+        <th id="active-demos" class="stat scoreboard-text" style="margin-right: 20px;"></th>
+      </tr>
+    </table>
+  </div>
+  <!--ACTIVE PLAYER BOOST-->
+  <div class="invisible" id="active-boost">
+    <svg class="progress-ring" width="250" height="250">
+      <defs>
+        <radialGradient id="orangeBoostGradient">
+          <stop id="orangeChangeable" offset="30%" stop-color="orange" />
+          <stop offset="99%" stop-color="#262626" />
+        </radialGradient>
+        <radialGradient id="blueBoostGradient">
+          <stop id="blueChangeable" offset="30%" stop-color="rgb(5,107,251)" />
+          <stop offset="99%" stop-color="#262626" />
+        </radialGradient>
+      </defs>
+      <circle id="innerCircle1" stroke="#545454" stroke-width="20" fill="url('#orangeBoostGradient')" r="100" cx="125"
+        cy="125" />
+      <circle id="innerCircle2" stroke="#262626" stroke-width="20" fill="url('#orangeBoostGradient')" r="100" cx="125"
+        cy="125" />
+      <circle id="boost-metre" class="progress-ring__circle" stroke="white" stroke-width="20" fill="transparent" r="100"
+        cx="125" cy="125" />
+      <text x="50%" y="50%" text-anchor="middle" fill="white" font-weight="600" font-size="100px" font-family="Arial"
+        dy=".358em" id="active-boost-number"></text>
+    </svg>
+  </div>
+  </div>
+
+  <!--STINGER
+  <video id="stinger" width="1920px" height="1080px" preload="auto">
+    <source src="kedsypoo_stingerV1.webm" type="video/webm">
+  </video>-->
+  
+  <!--GOAL REPLAYS SCORER/SPEED/ASSIST-->
+
+  <div id="goal-replay" class="invisible">
+    <div id="replay">
+      <div id="replay-banner" style="float:left;">
+        <svg height="40" width="40">
+          <circle  id="replayDot" cx="17.5" cy="17.5" r="10" stroke="crimson" stroke-width="3" fill="crimson" />
+        </svg>
+        REPLAY
+      </div>
+    </div>
+    <div id="goal-info-table">
+      <div id="goal-info">
+        <div id="scorer-name-and-icon">
+          <div id="scorer" class="goal-details"><img src="rl-svg-icons-master\stat-icons\goal.svg" width="70px" height="70px" class="statfeed-icon"><span id="scorer-name">NAMEEEEEEEEEEEE</span></div>
+        </div>
+        <div id="goal-team-colour"></div>
+        <div id="assister-and-speed">
+          <div id="assister" class="invisible goal-details"><img src="rl-svg-icons-master\stat-icons\assist.svg" width="70px" height="70px" class="statfeed-icon-nm"><span id="assister-name">NAMEEEEEEEEEEEEEEEEEEEEEEEEE</span></div>
+          <div id="goal-speed" class="goal-details"><img src="rl-svg-icons-master\stat-icons\shot-on-goal.svg" width="70px" height="70px" y="0" class="statfeed-icon"><span id="goal-speed-value" class="replay-text">000 KPH</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./logic.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js'></script>
+
+</body>
+
+</html>
